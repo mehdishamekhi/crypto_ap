@@ -38,28 +38,31 @@ class _LoadingScreenState extends State<LoadingScreen> {
             ],
           ),
         ),
-        child: const Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Padding(
-              padding: EdgeInsets.symmetric(vertical: 150),
-              child: Text(
-                'CoinCap',
-                style: TextStyle(
-                  fontSize: 60,
-                  fontFamily: 'Yti',
+        child: const Padding(
+          padding: EdgeInsets.symmetric(horizontal: 44),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Padding(
+                padding: EdgeInsets.symmetric(vertical: 150),
+                child: Text(
+                  'CoinCap',
+                  style: TextStyle(
+                    fontSize: 60,
+                    fontFamily: 'Yti',
+                  ),
+                  textAlign: TextAlign.center,
                 ),
-                textAlign: TextAlign.center,
               ),
-            ),
-            SpinKitWaveSpinner(
-              size: 100,
-              color: Color(0xff00203F),
-              trackColor: Color(0xffADEFD1),
-              waveColor: Color(0xffADEFD1),
-            ),
-          ],
+              SpinKitWaveSpinner(
+                size: 100,
+                color: Color(0xff00203F),
+                trackColor: Color(0xffADEFD1),
+                waveColor: Color(0xffADEFD1),
+              ),
+            ],
+          ),
         ),
       ),
     );

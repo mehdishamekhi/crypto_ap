@@ -1,5 +1,5 @@
 import 'package:crypto_ap/screens/login_screen.dart';
-import 'package:crypto_ap/widgets/onboarding_widgets.dart';
+import 'package:crypto_ap/util/widgets/onboarding_widgets.dart';
 
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
@@ -16,7 +16,6 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
   PageController controller = PageController();
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     controller.addListener(() {
       if (controller.page == 2) {
@@ -31,8 +30,8 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
     });
   }
 
+  @override
   Widget build(BuildContext context) {
-    var width = MediaQuery.of(context).size.width;
     var height = MediaQuery.of(context).size.height;
     List<String> descriptionlist = [
       'Discover the power of our crypto app, designed to simplify your digital asset journey with intuitive features and robust security measures.Explore a seamless platform that allows you to buy, sell, and trade cryptocurrencies effortlessly, backed by real-time market data and insightful analytics.Join our vibrant community of crypto enthusiasts, where you can engage, learn, and exchange ideas, unlocking the full potential of the decentralized world.',

@@ -14,8 +14,8 @@ class OnboardingWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DelayedWidget(
-      delayDuration: Duration(milliseconds: 200),
-      animationDuration: Duration(seconds: 1),
+      delayDuration: const Duration(milliseconds: 200),
+      animationDuration: const Duration(seconds: 1),
       animation: DelayedAnimations.SLIDE_FROM_BOTTOM,
       child: Column(
         children: [
