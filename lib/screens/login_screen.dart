@@ -261,9 +261,14 @@ class _LoginScreenState extends State<LoginScreen> {
                     padding: const EdgeInsets.only(left: 20),
                     child: InkWell(
                       onTap: () {
-                        BlocProvider(
-                          create: (context) => CryptoListBloc(),
-                          child: const CoinListScreen(),
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => BlocProvider(
+                              create: (context) => CryptoListBloc(),
+                              child: const CoinListScreen(),
+                            ),
+                          ),
                         );
                       },
                       child: const Text(
