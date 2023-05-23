@@ -89,7 +89,13 @@ class _CoinListScreenState extends State<CoinListScreen> {
                   (cryptolist) {
                     return SafeArea(
                       child: RefreshIndicator(
-                        onRefresh: () async {},
+                        backgroundColor:
+                            const Color.fromARGB(255, 126, 207, 223),
+                        color: const Color.fromARGB(255, 4, 79, 117),
+                        onRefresh: () async {
+                          BlocProvider.of<CryptoListBloc>(context)
+                              .add(GetCryptoListEvent());
+                        },
                         child: ListView.builder(
                           itemCount: cryptolist.length,
                           itemBuilder: (BuildContext context, int index) {

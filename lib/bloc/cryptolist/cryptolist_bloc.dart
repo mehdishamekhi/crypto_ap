@@ -9,10 +9,12 @@ class CryptoListBloc extends Bloc<CryptoListEvent, CryptoListState> {
   final ICryptoListRepository repository = locator.get();
 
   CryptoListBloc() : super(CryptoListInitState()) {
-    on<GetCryptoListEvent>((event, emit) async {
-      emit(CryptoListLoadingState());
-      var response = await repository.cryptolist();
-      emit(CryptoListSuccessState(response));
-    });
+    on<GetCryptoListEvent>(
+      (event, emit) async {
+        emit(CryptoListLoadingState());
+        var response = await repository.cryptolist();
+        emit(CryptoListSuccessState(response));
+      },
+    );
   }
 }
