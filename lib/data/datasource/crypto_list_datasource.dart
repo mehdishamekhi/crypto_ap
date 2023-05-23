@@ -12,7 +12,7 @@ class ICryptoListRemoteDatasource extends ICryptoListDatasource {
   @override
   Future<List<CryptoModel>> getcryptolist() async {
     try {
-      var datasource = await _dio.get('assets');
+      var datasource = await _dio.get('');
       return datasource.data['data']
           .map<CryptoModel>((jsonobject) => CryptoModel.fromMapJson(jsonobject))
           .toList();

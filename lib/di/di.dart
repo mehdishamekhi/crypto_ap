@@ -8,7 +8,7 @@ var locator = GetIt.instance;
 Future<void> getitinit() async {
   locator.registerSingleton<Dio>(
     Dio(
-      BaseOptions(baseUrl: 'api.coincap.io/v2/'),
+      BaseOptions(baseUrl: 'https://api.coincap.io/v2/assets'),
     ),
   );
   //datasource
