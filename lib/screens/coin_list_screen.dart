@@ -104,11 +104,9 @@ class _CoinListScreenState extends State<CoinListScreen> {
                                   vertical: 10, horizontal: 10),
                               decoration: BoxDecoration(
                                 border: Border.all(
-                                  color: changecolor(
-                                    double.parse(
-                                      cryptolist[index].changepecent24hr!,
-                                    ),
-                                  ),
+                                  color: changecolor(double.parse(
+                                    cryptolist[index].changepecent24hr!,
+                                  )),
                                   width: 2,
                                 ),
                                 borderRadius: BorderRadius.circular(10),
@@ -120,7 +118,8 @@ class _CoinListScreenState extends State<CoinListScreen> {
                                   Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                      builder: (context) => CoinDetailScreen(),
+                                      builder: (context) =>
+                                          CoinDetailScreen(cryptolist[index]),
                                     ),
                                   );
                                 },
@@ -157,12 +156,10 @@ class _CoinListScreenState extends State<CoinListScreen> {
                                               .toStringAsFixed(3),
                                           style: TextStyle(
                                             fontSize: 18,
-                                            color: changecolor(
-                                              double.parse(
-                                                cryptolist[index]
-                                                    .changepecent24hr!,
-                                              ),
-                                            ),
+                                            color: changecolor(double.parse(
+                                              cryptolist[index]
+                                                  .changepecent24hr!,
+                                            )),
                                           ),
                                         ),
                                       ],
@@ -177,14 +174,15 @@ class _CoinListScreenState extends State<CoinListScreen> {
                                   ),
                                 ),
                                 leading: Text(
-                                  cryptolist[index].rank!,
+                                  cryptolist[index].rank!.toString(),
                                   style: const TextStyle(
                                     fontSize: 25,
                                   ),
                                 ),
                                 trailing: getarrowdirection(
                                   double.parse(
-                                      cryptolist[index].changepecent24hr!),
+                                    cryptolist[index].changepecent24hr!,
+                                  ),
                                 ),
                               ),
                             );

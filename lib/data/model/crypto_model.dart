@@ -7,6 +7,8 @@ class CryptoModel {
   String? maxsupply;
   String? price;
   String? changepecent24hr;
+  String? vwap24hr;
+  String? explorer;
   CryptoModel(
     this.id,
     this.rank,
@@ -16,6 +18,8 @@ class CryptoModel {
     this.maxsupply,
     this.price,
     this.changepecent24hr,
+    this.vwap24hr,
+    this.explorer,
   );
   factory CryptoModel.fromMapJson(Map<String, dynamic> jsonobject) {
     return CryptoModel(
@@ -27,6 +31,8 @@ class CryptoModel {
       jsonobject['maxSupply'],
       jsonobject['priceUsd'],
       jsonobject['changePercent24Hr'],
+      jsonobject['vwap24Hr'],
+      jsonobject['explorer'],
     );
   }
 }
