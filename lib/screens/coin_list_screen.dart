@@ -156,14 +156,16 @@ class _CoinListScreenState extends State<CoinListScreen> {
                                               .toStringAsFixed(3),
                                           style: TextStyle(
                                             fontSize: 18,
-                                            color: changecolor(double.parse(
-                                              cryptolist[index]
-                                                  .changepecent24hr!,
-                                            )),
+                                            color: changecolor(
+                                              double.parse(
+                                                cryptolist[index]
+                                                    .changepecent24hr!,
+                                              ),
+                                            ),
                                           ),
                                         ),
                                       ],
-                                    )
+                                    ),
                                   ],
                                 ),
                                 subtitle: Text(

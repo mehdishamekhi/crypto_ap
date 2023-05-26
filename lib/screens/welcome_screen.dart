@@ -47,6 +47,15 @@ class WelcomScreen extends StatelessWidget {
                 ),
                 textAlign: TextAlign.center,
               ),
+              const Text(
+                'please turn on your VPN to open app',
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontSize: 32,
+                  fontFamily: 'yb',
+                  color: Colors.red,
+                ),
+              )
             ],
           ),
         ),

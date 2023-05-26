@@ -1,4 +1,5 @@
 import 'package:crypto_ap/data/model/crypto_model.dart';
+import 'package:crypto_ap/screens/buy_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -22,7 +23,13 @@ class _CoinDetailScreenState extends State<CoinDetailScreen> {
             color: Color(0xff00203F),
           ),
         ],
-        title: Text(widget.cryptoModels.name!),
+        title: Text(
+          widget.cryptoModels.name!,
+          style: const TextStyle(
+            fontSize: 30,
+            fontFamily: 'yb',
+          ),
+        ),
         elevation: 0,
         backgroundColor: const Color(0xffADEFD1),
       ),
@@ -57,7 +64,13 @@ class _CoinDetailScreenState extends State<CoinDetailScreen> {
                       ),
                     ),
                     child: Center(
-                      child: Text(widget.cryptoModels.symbol!),
+                      child: Text(
+                        widget.cryptoModels.symbol!,
+                        style: const TextStyle(
+                          fontSize: 30,
+                          fontFamily: 'yb',
+                        ),
+                      ),
                     ),
                   ),
                 ),
@@ -66,6 +79,11 @@ class _CoinDetailScreenState extends State<CoinDetailScreen> {
                 child: Center(
                   child: Text(
                     '\$ ${double.parse(widget.cryptoModels.price!).toStringAsFixed(3)}',
+                    style: const TextStyle(
+                      fontSize: 35,
+                      fontWeight: FontWeight.bold,
+                      color: Color(0xff00203F),
+                    ),
                   ),
                 ),
               ),
@@ -78,9 +96,13 @@ class _CoinDetailScreenState extends State<CoinDetailScreen> {
                       Text(
                         '\$ ${double.parse(widget.cryptoModels.changepecent24hr!).toStringAsFixed(3)}',
                         style: TextStyle(
-                          color: changecolor(double.parse(
-                            widget.cryptoModels.changepecent24hr!,
-                          )),
+                          fontSize: 30,
+                          fontWeight: FontWeight.bold,
+                          color: changecolor(
+                            double.parse(
+                              widget.cryptoModels.changepecent24hr!,
+                            ),
+                          ),
                         ),
                       ),
                       const SizedBox(
@@ -99,22 +121,46 @@ class _CoinDetailScreenState extends State<CoinDetailScreen> {
                 child: Padding(
                   padding:
                       const EdgeInsets.symmetric(horizontal: 50, vertical: 20),
-                  child: Row(
+                  child: Column(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Column(
                         children: [
-                          const Text('supply'),
+                          const Text(
+                            'supply',
+                            style: TextStyle(
+                              fontSize: 35,
+                              fontWeight: FontWeight.bold,
+                              color: Color(0xffADEFD1),
+                            ),
+                          ),
                           const SizedBox(
                             height: 20,
                           ),
-                          Text(double.parse(widget.cryptoModels.supply!)
-                              .toStringAsFixed(2)),
+                          Text(
+                            double.parse(widget.cryptoModels.supply!)
+                                .toStringAsFixed(2),
+                            style: const TextStyle(
+                              fontSize: 28,
+                              fontWeight: FontWeight.bold,
+                              color: Color(0xff00203F),
+                            ),
+                          ),
                         ],
+                      ),
+                      const SizedBox(
+                        height: 20,
                       ),
                       Column(
                         children: [
-                          const Text('maxSupply'),
+                          const Text(
+                            'maxSupply',
+                            style: TextStyle(
+                              fontSize: 35,
+                              fontWeight: FontWeight.bold,
+                              color: Color(0xffADEFD1),
+                            ),
+                          ),
                           const SizedBox(
                             height: 20,
                           ),
@@ -124,18 +170,38 @@ class _CoinDetailScreenState extends State<CoinDetailScreen> {
                                 : double.parse(
                                     (widget.cryptoModels.maxsupply).toString(),
                                   ).toStringAsFixed(3),
+                            style: const TextStyle(
+                              fontSize: 30,
+                              fontWeight: FontWeight.bold,
+                              color: Color(0xff00203F),
+                            ),
                           ),
                         ],
                       ),
+                      const SizedBox(
+                        height: 20,
+                      ),
                       Column(
                         children: [
-                          const Text('vwap24Hr'),
+                          const Text(
+                            'vwap24Hr',
+                            style: TextStyle(
+                              fontSize: 35,
+                              fontWeight: FontWeight.bold,
+                              color: Color(0xffADEFD1),
+                            ),
+                          ),
                           const SizedBox(
                             height: 20,
                           ),
                           Text(
                             double.parse(widget.cryptoModels.vwap24hr!)
                                 .toStringAsFixed(3),
+                            style: const TextStyle(
+                              fontSize: 30,
+                              fontWeight: FontWeight.bold,
+                              color: Color(0xff00203F),
+                            ),
                           ),
                         ],
                       ),
@@ -183,7 +249,15 @@ class _CoinDetailScreenState extends State<CoinDetailScreen> {
                           backgroundColor: const Color(0xffADEFD1),
                           shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(20))),
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) =>
+                                BuyScreen(widget.cryptoModels),
+                          ),
+                        );
+                      },
                       child: Text(
                         'Buy ${widget.cryptoModels.name}',
                         style: const TextStyle(
@@ -208,11 +282,13 @@ Widget getarrowdirection(double changepercent) {
     return const Icon(
       Icons.trending_up,
       color: Colors.green,
+      size: 50,
     );
   } else {
     return const Icon(
       Icons.trending_down,
       color: Colors.red,
+      size: 50,
     );
   }
 }
