@@ -25,37 +25,45 @@ class _CoinListScreenState extends State<CoinListScreen> {
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
-        title: const Row(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            Text(
-              'rank',
-              style: TextStyle(
-                fontFamily: 'yli',
-                fontSize: 30,
-                color: Color(0xff00203F),
+        title: const Padding(
+          padding: EdgeInsets.only(
+            right: 40,
+          ),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              Text(
+                'rank',
+                style: TextStyle(
+                  fontFamily: 'yli',
+                  fontSize: 30,
+                  color: Color(0xff00203F),
+                ),
               ),
-            ),
-            Padding(
-              padding: EdgeInsets.only(left: 20, right: 150),
-              child: Text(
-                'name\nsymbol',
+              Padding(
+                padding: EdgeInsets.only(
+                  left: 20,
+                ),
+                child: Text(
+                  'name\nsymbol',
+                  style: TextStyle(
+                    fontFamily: 'yli',
+                    fontSize: 20,
+                    color: Color(0xff00203F),
+                  ),
+                ),
+              ),
+              Spacer(),
+              Text(
+                'price\npicechange',
                 style: TextStyle(
                   fontFamily: 'yli',
                   fontSize: 20,
                   color: Color(0xff00203F),
                 ),
               ),
-            ),
-            Text(
-              'price\npicechange',
-              style: TextStyle(
-                fontFamily: 'yli',
-                fontSize: 20,
-                color: Color(0xff00203F),
-              ),
-            ),
-          ],
+            ],
+          ),
         ),
         elevation: 0,
         backgroundColor: const Color.fromARGB(255, 169, 214, 233),
