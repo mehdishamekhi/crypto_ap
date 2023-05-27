@@ -223,9 +223,9 @@ class _CoinDetailScreenState extends State<CoinDetailScreen> {
                         ),
                       ),
                       onPressed: () async {
-                        Uri _uri = await Uri.parse(
+                        Uri uri = Uri.parse(
                             widget.cryptoModels.explorer ?? 'www.google.com');
-                        await launchUrl(_uri);
+                        await launchUrl(uri);
                       },
                       child: Text(
                         'More information: \n\n ${widget.cryptoModels.explorer!}',
