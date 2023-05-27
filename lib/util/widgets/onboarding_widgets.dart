@@ -2,15 +2,15 @@ import 'package:delayed_widget/delayed_widget.dart';
 import 'package:flutter/material.dart';
 
 class OnboardingWidget extends StatelessWidget {
-  OnboardingWidget({
+  const OnboardingWidget({
     super.key,
     required this.imageurl,
     required this.description,
     required this.screenheight,
   });
-  String imageurl;
-  String description;
-  double screenheight;
+  final String imageurl;
+  final String description;
+  final double screenheight;
   @override
   Widget build(BuildContext context) {
     return DelayedWidget(
@@ -22,13 +22,13 @@ class OnboardingWidget extends StatelessWidget {
           Expanded(
             flex: 2,
             child: Container(
-              child: Image.asset(
-                imageurl,
-                fit: BoxFit.cover,
-              ),
               decoration: BoxDecoration(
                 color: Colors.grey.shade300,
                 borderRadius: BorderRadius.circular(10),
+              ),
+              child: Image.asset(
+                imageurl,
+                fit: BoxFit.cover,
               ),
             ),
           ),
